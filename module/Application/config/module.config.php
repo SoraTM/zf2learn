@@ -15,6 +15,7 @@ return [
             ]
         ]
     ],
+    
     'view_manager' => [
         'display_not_found_reason' => true,
         'display_exceptions'       => true,
@@ -31,9 +32,19 @@ return [
             __DIR__ . '/../view'
         ]
     ],
+    
     'controllers' => [
-        'invokables' => [
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
+        'factories' => [
+            'Application\Controller\Index' => 'Application\Controller\IndexControllerFactory'
         ]
+    ],
+    
+    'service_manager' => [
+      'invokables' => [
+        'loggingService' => 'Application\Service\LoggingService'
+      ],
+      'factories' => [
+        'greetingService' => 'Application\Service\GreetingServiceFactory',
+      ]
     ]
 ];
