@@ -1,0 +1,23 @@
+<?php
+
+namespace Application;
+
+class Module
+{
+    public function getConfig()
+    {
+        //eval(\Psy\sh());
+        return include __DIR__ . '/config/module.config.php';
+    }
+
+    public function getAutoloaderConfig()
+    {
+        return [
+            'Zend\Loader\StandardAutoloader' => [
+                'namespaces' => [
+                    __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__
+                ]
+            ]
+        ];
+    }
+}
