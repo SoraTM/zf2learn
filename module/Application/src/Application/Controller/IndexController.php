@@ -14,7 +14,7 @@ class IndexController extends AbstractActionController
         $this->greetingService = $service;
     }
     
-    public function IndexAction()
+    public function indexAction()
     {
         //eval(\Psy\sh());
         $greetingService = $this->getServiceLocator()->get('greetingService');
