@@ -14,8 +14,6 @@ class GreetingServiceFactory implements FactoryInterface
         
         $loggingService = $serviceLocator->get('loggingService');
 
-        //$loggingService = new LoggingService();
-
         $greetingService->getEventManager()->attach(
             'getGreeting',
             [$loggingService, 'onGetGreeting']
